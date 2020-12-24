@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ROCK-PAPER-SCISSOR</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+    <img src="https://www.esquireme.com/public/images/2017/05/29/rock_paper_scissors__2x.png">
+  <script>
+    // Your JavaScript goes here!
+   //0-rock, 1-paper, 2-sci
+    function result(
+   playerSelection,computerSelection)
+   {
+    if(playerSelection==computerSelection)
+        return "Tie!!!!!";
+    else if(playerSelection==0)
+    {
+        if(computerSelection==1)
+            return "You lose, Paper beats Rock";
+        else return "You win, rock beats scissor";
+    }
+    else if (playerSelection==1)
+    {
+        if(computerSelection==0)
+            return "You win, Paper beats Rock";
+        else return "You lose, scissor beats paper";
+    }
+    else if(playerSelection==2)
+    {
+        if(computerSelection==0)
+            return "You lose, rock beats scissor";
+        else return "You win, scissor beats paper";
+    }
+   }
+   function playerChoiceDecode(playerChoice){
+   if(playerChoice.toLowerCase()=="rock")
+    return 0;
+    else if(playerChoice.toLowerCase()=="paper")
+    return 1;
+    else if(playerChoice.toLowerCase()=="scissor")
+    return 2;
+   }
+   for(let i=0;i<5;++i){
+   let playerChoice=prompt("Enter the weapon name (Rock/Paper/Scissor):")
+    let playerSelection=playerChoiceDecode(playerChoice)
+    let computerSelection=Math.floor(Math.random()*3)
+    console.log(result(playerSelection,computerSelection))
+   }
+  </script>
+</body>
+</html>
